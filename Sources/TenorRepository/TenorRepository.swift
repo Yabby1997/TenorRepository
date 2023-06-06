@@ -45,7 +45,7 @@ public final class TenorRepository: GIFRepository {
     private func search(query: String, position: String) async throws -> [GIF] {
         let result: TenorSearchResultDTO = try await networkService.request(
             domain: "https://tenor.googleapis.com/v2",
-            path: "/featured",
+            path: "/search",
             method: .get,
             parameters: [
                 "q": query,
