@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "gifpediaservice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Yabby1997/GIFPediaService",
+      "state" : {
+        "revision" : "b69fadce2c5a9dfca927cceb03de0504f2022b85",
+        "version" : "0.2.2"
+      }
+    },
+    {
+      "identity" : "shnetworkserviceinterface",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Yabby1997/SHNetworkServiceInterface",
+      "state" : {
+        "revision" : "2f6778ad4fc7b53ebb38073da3ee21592d0618ad",
+        "version" : "0.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}
