@@ -53,7 +53,7 @@ public final class TenorRepository: GIFRepository {
                 "limit": "\(limit)",
                 "pos": "\(position)",
                 "rating": "g",
-                "locale": "en"
+                "locale": "en_US"
             ],
             headers: nil,
             body: nil
@@ -62,8 +62,8 @@ public final class TenorRepository: GIFRepository {
         nextPosition = result.next
     
         return result.results.compactMap { dto -> GIF? in
-            guard let thumbnailUrl = dto.gifPreviewUrl,
-                  let originalUrl = dto.gifUrl else { return nil }
+            guard let thumbnailUrl = dto.thumbnailUrl,
+                  let originalUrl = dto.originalUrl else { return nil }
             return GIF(
                 id: "Tenor_\(dto.id)",
                 title: dto.title,

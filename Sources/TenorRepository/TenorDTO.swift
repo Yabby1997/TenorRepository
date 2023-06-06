@@ -17,13 +17,13 @@ struct TenorEntityDTO: Decodable {
     let title: String
     let images: [String: TenorImageDTO]
 
-    var gifUrl: URL? {
+    var originalUrl: URL? {
         guard let url = images["gif"]?.url else { return nil }
         return URL(string: url)
     }
 
-    var gifPreviewUrl: URL? {
-        guard let url = images["gifpreview"]?.url else { return nil }
+    var thumbnailUrl: URL? {
+        guard let url = images["tinygif"]?.url else { return nil }
         return URL(string: url)
     }
 
