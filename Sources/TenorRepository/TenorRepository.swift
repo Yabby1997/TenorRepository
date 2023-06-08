@@ -22,7 +22,7 @@ public final class TenorRepository: GIFRepository {
         self.limit = limit
     }
 
-    public func search(query: String) async -> [GIF] {
+    public func search(query: String) async -> [GIFEntity] {
         do {
             let results = try await search(query: query, position: "")
             latestQuery = query
@@ -33,7 +33,7 @@ public final class TenorRepository: GIFRepository {
         }
     }
 
-    public func requestNext() async -> [GIF] {
+    public func requestNext() async -> [GIFEntity] {
         do {
             return try await search(query: latestQuery, position: nextPosition)
         } catch {
@@ -42,7 +42,7 @@ public final class TenorRepository: GIFRepository {
         }
     }
 
-    private func search(query: String, position: String) async throws -> [GIF] {
+    private func search(query: String, position: String) async throws -> [GIFEntity] {
         let result: TenorSearchResultDTO = try await networkService.request(
             domain: "https://tenor.googleapis.com/v2",
             path: "/search",
@@ -61,10 +61,10 @@ public final class TenorRepository: GIFRepository {
 
         nextPosition = result.next
     
-        return result.results.compactMap { dto -> GIF? in
+        return result.results.compactMap { dto -> GIFEntity? in
             guard let thumbnailUrl = dto.thumbnailUrl,
                   let originalUrl = dto.originalUrl else { return nil }
-            return GIF(
+            return GIFEntity(
                 id: "Tenor_\(dto.id)",
                 title: dto.title,
                 thumbnailUrl: thumbnailUrl,

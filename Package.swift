@@ -14,7 +14,7 @@ let package = Package(
             targets: ["TenorRepository"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Yabby1997/GIFPediaService", from: "0.2.2"),
+        .package(url: "https://github.com/Yabby1997/GIFPediaService", from: "0.4.0"),
         .package(url: "https://github.com/Yabby1997/SHNetworkServiceInterface", from: "0.1.0"),
     ],
     targets: [

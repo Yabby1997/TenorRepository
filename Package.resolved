@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Yabby1997/GIFPediaService",
       "state" : {
-        "revision" : "b69fadce2c5a9dfca927cceb03de0504f2022b85",
-        "version" : "0.2.2"
+        "revision" : "8d859b79d696d06f0e2ddefc082ee2c48f4a1dcb",
+        "version" : "0.4.0"
       }
     },
     {
